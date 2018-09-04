@@ -1,3 +1,12 @@
+if('serviceWorker' in navigator){
+  window.addEventListener('load', ()=>{
+    navigator.serviceWorker
+      .register('../sw.js')
+      .then(reg => console.log('Service Worker: Registered'))
+      .catch(err => console.log(`Service Worker: Error: ${err}`))
+  })
+}
+
 let restaurants,
   neighborhoods,
   cuisines
@@ -161,6 +170,7 @@ createRestaurantHTML = (restaurant) => {
   const image = document.createElement('img');
   image.className = 'restaurant-img';
   image.src = DBHelper.imageUrlForRestaurant(restaurant);
+  image.alt = restaurant.alt;
   li.append(image);
 
   const name = document.createElement('h1');
