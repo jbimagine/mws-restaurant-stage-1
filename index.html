@@ -9,7 +9,7 @@
 </head>
 
 <body>
-  <header>
+  <header aria-label = "homepage" role = "link" tabindex="0">
     <nav>
       <h1><a href="/">Restaurant Reviews</a></h1>
     </nav>
@@ -17,15 +17,15 @@
 
   <main id="maincontent">
     <section id="map-container">
-      <div id="map"></div>
+      <div id="map" aria-label = "map of restaurant" role = "none" tabindex="0"></div>
     </section>
     <section>
-      <div class="filter-options">
+      <div class="filter-options" aria-label ="filter options" role = "group" tabindex="0">
         <h2>Filter Results</h2>
-        <select id="neighborhoods-select" name="neighborhoods" onchange="updateRestaurants()">
+        <select id="neighborhoods-select" name="neighborhoods" aria-label="select neighborhood" role="radio" tabindex="0" onchange="updateRestaurants()">
           <option value="all">All Neighborhoods</option>
         </select>
-        <select id="cuisines-select" name="cuisines" onchange="updateRestaurants()">
+        <select id="cuisines-select" name="cuisines" aria-label="select cuisine" role="radio" tabindex="0" onchange="updateRestaurants()">
           <option value="all">All Cuisines</option>
         </select>
       </div>
